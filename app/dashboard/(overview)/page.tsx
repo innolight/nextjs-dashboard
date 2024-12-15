@@ -6,6 +6,8 @@ import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { CardsSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from '@/app/ui/skeletons';
 
+// force this page to render dynamically
+export const dynamic = 'force-dynamic';
 
 export default async function Page() {
   return (
