@@ -1,4 +1,4 @@
-import { createPool, db } from "@vercel/postgres";
+import { createPool, db, postgresConnectionString } from "@vercel/postgres";
 
 import {
   CustomerField,
@@ -12,6 +12,15 @@ import { formatCurrency } from './utils';
 
 console.log("db.connect()");
 export const dbClient = await db.connect();
+// export const dbClient = await createPool({
+//   // connectionString: postgresConnectionString('pool'),
+//   maxUses: 10000,
+//   max: 10,
+//   min: 0,
+//   connectionTimeoutMillis: 100_000,
+//   idleTimeoutMillis: 10000
+// }); // somehow doesn't work
+
 
 export async function fetchRevenue() {
   try {
