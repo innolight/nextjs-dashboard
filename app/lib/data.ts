@@ -1,4 +1,4 @@
-import { db } from "@vercel/postgres";
+import { createPool, db } from "@vercel/postgres";
 
 import {
   CustomerField,
